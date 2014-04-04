@@ -38,6 +38,9 @@ end
 #gem 'open-uri'
 gem 'nokogiri'
 
+#allow redirects
+gem 'open_uri_redirections'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 
