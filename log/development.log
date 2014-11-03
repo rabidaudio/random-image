@@ -435,3 +435,112 @@ Processing by LastfmController#albumart as HTML
   Parameters: {"artist"=>"guided by voices", "album"=>"bee thousand", "size"=>"small"}
 Redirected to http://userserve-ak.last.fm/serve/34s/83338587.png
 Completed 302 Found in 498ms (ActiveRecord: 0.0ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateAlbumArts (20141103222636)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mCREATE TABLE "album_arts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "artist" varchar(255), "album" varchar(255), "size" varchar(255), "url" varchar(255), "data" blob, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20141103222636"]]
+  [1m[36m (36.3ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mAlbumArt Load (7.4ms)[0m  [1mSELECT "album_arts".* FROM "album_arts" WHERE "album_arts"."id" = ? LIMIT 1[0m  [["id", 0]]
+  [1m[35mAlbumArt Load (0.5ms)[0m  SELECT "album_arts".* FROM "album_arts" ORDER BY "album_arts"."id" ASC LIMIT 1
+
+
+Started GET "/albumart?artist=guided%20by%20voices&album=bee%20thousand&size=small" for 127.0.0.1 at 2014-11-03 17:44:45 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by LastfmController#albumart as HTML
+  Parameters: {"artist"=>"guided by voices", "album"=>"bee thousand", "size"=>"small"}
+  [1m[35mAlbumArt Load (0.3ms)[0m  SELECT "album_arts".* FROM "album_arts" WHERE "album_arts"."artist" = 'guided by voices' AND "album_arts"."album" = 'bee thousand' AND "album_arts"."size" = 'small' AND "album_arts"."controller" = 'lastfm' AND "album_arts"."action" = 'albumart' LIMIT 1
+SQLite3::SQLException: no such column: album_arts.controller: SELECT  "album_arts".* FROM "album_arts"  WHERE "album_arts"."artist" = 'guided by voices' AND "album_arts"."album" = 'bee thousand' AND "album_arts"."size" = 'small' AND "album_arts"."controller" = 'lastfm' AND "album_arts"."action" = 'albumart' LIMIT 1
+Completed 500 Internal Server Error in 17ms
+
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such column: album_arts.controller: SELECT  "album_arts".* FROM "album_arts"  WHERE "album_arts"."artist" = 'guided by voices' AND "album_arts"."album" = 'bee thousand' AND "album_arts"."size" = 'small' AND "album_arts"."controller" = 'lastfm' AND "album_arts"."action" = 'albumart' LIMIT 1):
+  app/controllers/lastfm_controller.rb:6:in `albumart'
+
+
+  Rendered /home/charles/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.7ms)
+  Rendered /home/charles/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+  Rendered /home/charles/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.1ms)
+  Rendered /home/charles/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (22.2ms)
+
+
+Started GET "/albumart?artist=guided%20by%20voices&album=bee%20thousand&size=small" for 127.0.0.1 at 2014-11-03 17:45:51 -0500
+Processing by LastfmController#albumart as HTML
+  Parameters: {"artist"=>"guided by voices", "album"=>"bee thousand", "size"=>"small"}
+  [1m[36mAlbumArt Load (0.3ms)[0m  [1mSELECT "album_arts".* FROM "album_arts" WHERE "album_arts"."artist" = 'guided by voices' AND "album_arts"."album" = 'bee thousand' AND "album_arts"."size" = 'small' LIMIT 1[0m
+Completed 500 Internal Server Error in 7ms
+
+RuntimeError (API Key is not set):
+  app/controllers/lastfm_controller.rb:10:in `albumart'
+
+
+  Rendered /home/charles/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.7ms)
+  Rendered /home/charles/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.6ms)
+  Rendered /home/charles/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.7ms)
+  Rendered /home/charles/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (15.0ms)
+
+
+Started GET "/albumart?artist=guided%20by%20voices&album=bee%20thousand&size=small" for 127.0.0.1 at 2014-11-03 17:46:39 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by LastfmController#albumart as HTML
+  Parameters: {"artist"=>"guided by voices", "album"=>"bee thousand", "size"=>"small"}
+  [1m[35mAlbumArt Load (0.2ms)[0m  SELECT "album_arts".* FROM "album_arts" WHERE "album_arts"."artist" = 'guided by voices' AND "album_arts"."album" = 'bee thousand' AND "album_arts"."size" = 'small' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (2.6ms)[0m  INSERT INTO "album_arts" ("album", "artist", "created_at", "data", "size", "updated_at", "url") VALUES (?, ?, ?, ?, ?, ?, ?)  [["album", "bee thousand"], ["artist", "guided by voices"], ["created_at", Mon, 03 Nov 2014 22:46:40 UTC +00:00], ["data", "<1454 bytes of binary data>"], ["size", "small"], ["updated_at", Mon, 03 Nov 2014 22:46:40 UTC +00:00], ["url", "http://userserve-ak.last.fm/serve/34s/83338587.png"]]
+  [1m[36m (20.3ms)[0m  [1mcommit transaction[0m
+  Rendered text template (0.0ms)
+Sent data  (6.7ms)
+Completed 200 OK in 970ms (Views: 6.4ms | ActiveRecord: 23.7ms)
+  [1m[36mAlbumArt Load (0.4ms)[0m  [1mSELECT "album_arts".* FROM "album_arts" ORDER BY "album_arts"."id" ASC LIMIT 1[0m
+
+
+Started GET "/albumart?artist=guided%20by%20voices&album=bee%20thousand" for 127.0.0.1 at 2014-11-03 17:47:05 -0500
+Processing by LastfmController#albumart as HTML
+  Parameters: {"artist"=>"guided by voices", "album"=>"bee thousand"}
+  [1m[35mAlbumArt Load (0.5ms)[0m  SELECT "album_arts".* FROM "album_arts" WHERE "album_arts"."artist" = 'guided by voices' AND "album_arts"."album" = 'bee thousand' AND "album_arts"."size" = 'mega' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "album_arts" ("album", "artist", "created_at", "data", "size", "updated_at", "url") VALUES (?, ?, ?, ?, ?, ?, ?)  [["album", "bee thousand"], ["artist", "guided by voices"], ["created_at", Mon, 03 Nov 2014 22:47:06 UTC +00:00], ["data", "<158949 bytes of binary data>"], ["size", "mega"], ["updated_at", Mon, 03 Nov 2014 22:47:06 UTC +00:00], ["url", "http://userserve-ak.last.fm/serve/_/83338587/Bee+Thousand+PNG.png"]]
+  [1m[36m (73.6ms)[0m  [1mcommit transaction[0m
+  Rendered text template (0.0ms)
+Sent data  (0.6ms)
+Completed 200 OK in 1203ms (Views: 0.4ms | ActiveRecord: 75.2ms)
+  [1m[35mAlbumArt Load (0.6ms)[0m  SELECT "album_arts".* FROM "album_arts" ORDER BY "album_arts"."id" ASC LIMIT 1
+  [1m[36mAlbumArt Load (1.9ms)[0m  [1mSELECT "album_arts".* FROM "album_arts"[0m
+
+
+Started GET "/albumart" for 127.0.0.1 at 2014-11-03 17:47:36 -0500
+Processing by LastfmController#albumart as HTML
+  [1m[35mAlbumArt Load (0.2ms)[0m  SELECT "album_arts".* FROM "album_arts" WHERE "album_arts"."artist" IS NULL AND "album_arts"."album" IS NULL AND "album_arts"."size" = 'mega' LIMIT 1
+  Rendered text template (0.0ms)
+Completed 404 Not Found in 277ms (Views: 1.0ms | ActiveRecord: 0.2ms)
+  [1m[35mAlbumArt Load (0.9ms)[0m  SELECT "album_arts".* FROM "album_arts"
+
+
+Started GET "/albumart?artist=guided%20by%20voices&album=bee%20thousand" for 127.0.0.1 at 2014-11-03 17:50:11 -0500
+Processing by LastfmController#albumart as HTML
+  Parameters: {"artist"=>"guided by voices", "album"=>"bee thousand"}
+  [1m[36mAlbumArt Load (0.5ms)[0m  [1mSELECT "album_arts".* FROM "album_arts" WHERE "album_arts"."artist" = 'guided by voices' AND "album_arts"."album" = 'bee thousand' AND "album_arts"."size" = 'mega' LIMIT 1[0m
+  Rendered text template (0.0ms)
+Sent data  (1.2ms)
+Completed 200 OK in 4ms (Views: 1.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/albumart?artist=marketing&album=we%20need%20sad%20songs" for 127.0.0.1 at 2014-11-03 17:50:48 -0500
+Processing by LastfmController#albumart as HTML
+  Parameters: {"artist"=>"marketing", "album"=>"we need sad songs"}
+  [1m[35mAlbumArt Load (0.5ms)[0m  SELECT "album_arts".* FROM "album_arts" WHERE "album_arts"."artist" = 'marketing' AND "album_arts"."album" = 'we need sad songs' AND "album_arts"."size" = 'mega' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (2.0ms)[0m  INSERT INTO "album_arts" ("album", "artist", "created_at", "data", "size", "updated_at", "url") VALUES (?, ?, ?, ?, ?, ?, ?)  [["album", "we need sad songs"], ["artist", "marketing"], ["created_at", Mon, 03 Nov 2014 22:50:51 UTC +00:00], ["data", "<413384 bytes of binary data>"], ["size", "mega"], ["updated_at", Mon, 03 Nov 2014 22:50:51 UTC +00:00], ["url", "http://userserve-ak.last.fm/serve/_/82649725/We+Need+Sad+Songs.jpg"]]
+  [1m[36m (78.3ms)[0m  [1mcommit transaction[0m
+  Rendered text template (0.0ms)
+Sent data  (0.7ms)
+Completed 200 OK in 2862ms (Views: 0.5ms | ActiveRecord: 81.0ms)
+
+
+Started GET "/albumart?artist=marketing&album=we%20need%20sad%20songs" for 127.0.0.1 at 2014-11-03 17:51:00 -0500
+Processing by LastfmController#albumart as HTML
+  Parameters: {"artist"=>"marketing", "album"=>"we need sad songs"}
+  [1m[35mAlbumArt Load (2.1ms)[0m  SELECT "album_arts".* FROM "album_arts" WHERE "album_arts"."artist" = 'marketing' AND "album_arts"."album" = 'we need sad songs' AND "album_arts"."size" = 'mega' LIMIT 1
+  Rendered text template (0.0ms)
+Sent data  (0.7ms)
+Completed 200 OK in 6ms (Views: 0.6ms | ActiveRecord: 2.1ms)
