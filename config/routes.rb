@@ -3,6 +3,8 @@ RandomImage::Application.routes.draw do
   
   #match "*", :to => "main#rand", :via => [:get, :post]
   #match ".*", :to => "main#rand", :via => [:get, :post]
+  
+  match '/albumart', :to => 'lastfm#albumart', :via => [:get, :post]
   match '/:anything', :to => "main#rand", :constraints => { :anything => /.*/ }, :via => [:get, :post]
   root :to => 'main#rand'
   

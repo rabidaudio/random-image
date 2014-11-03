@@ -38,6 +38,8 @@ end
 #gem 'open-uri'
 gem 'nokogiri'
 
+gem 'lastfm-client'
+
 #allow redirects
 gem 'open_uri_redirections'
 
