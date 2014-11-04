@@ -994,3 +994,5 @@ Processing by MainController#rand as HTML
   Rendered text template (0.0ms)
 Sent data  (0.7ms)
 Completed 200 OK in 1520ms (Views: 0.5ms | ActiveRecord: 0.0ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"

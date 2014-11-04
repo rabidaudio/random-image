@@ -1,5 +1,3 @@
-require_dependency 'lib/assets/image_process.rb'
-
 class MainController < ApplicationController
   def rand
     doc = Nokogiri::HTML(open( FLICKR_ADDR ))
