@@ -1,1 +1,5 @@
 keys
+tmp
+log
+Gemfile.lock
+db/*.sqlite3
