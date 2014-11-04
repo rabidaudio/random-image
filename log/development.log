@@ -544,3 +544,453 @@ Processing by LastfmController#albumart as HTML
   Rendered text template (0.0ms)
 Sent data  (0.7ms)
 Completed 200 OK in 6ms (Views: 0.6ms | ActiveRecord: 2.1ms)
+  [1m[36mAlbumArt Load (0.9ms)[0m  [1mSELECT "album_arts".* FROM "album_arts" ORDER BY "album_arts"."id" ASC LIMIT 1[0m
+  [1m[36mAlbumArt Load (0.3ms)[0m  [1mSELECT "album_arts".* FROM "album_arts" ORDER BY "album_arts"."id" ASC LIMIT 1[0m
+  [1m[35mAlbumArt Load (0.5ms)[0m  SELECT "album_arts".* FROM "album_arts" ORDER BY "album_arts"."id" ASC LIMIT 1
+  [1m[36mAlbumArt Load (0.4ms)[0m  [1mSELECT "album_arts".* FROM "album_arts" ORDER BY "album_arts"."id" ASC LIMIT 1[0m
+  [1m[35mAlbumArt Load (0.4ms)[0m  SELECT "album_arts".* FROM "album_arts" ORDER BY "album_arts"."id" ASC LIMIT 1
+  [1m[36mAlbumArt Load (10.5ms)[0m  [1mSELECT "album_arts".* FROM "album_arts"[0m
+  [1m[35mAlbumArt Load (0.7ms)[0m  SELECT "album_arts".* FROM "album_arts"
+  [1m[36mAlbumArt Load (0.7ms)[0m  [1mSELECT "album_arts".* FROM "album_arts"[0m
+  [1m[35mAlbumArt Load (0.5ms)[0m  SELECT "album_arts".* FROM "album_arts"
+  [1m[36mAlbumArt Load (0.4ms)[0m  [1mSELECT "album_arts".* FROM "album_arts" WHERE "album_arts"."artist" = 'marketing' LIMIT 1[0m
+  [1m[35mAlbumArt Load (0.3ms)[0m  SELECT "album_arts".* FROM "album_arts" WHERE "album_arts"."artist" = 'marketing' LIMIT 1
+
+
+Started GET "/albumart?artist=metallica&album=metallica" for 127.0.0.1 at 2014-11-03 22:40:19 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by LastfmController#albumart as HTML
+  Parameters: {"artist"=>"metallica", "album"=>"metallica"}
+  [1m[35mAlbumArt Load (0.2ms)[0m  SELECT "album_arts".* FROM "album_arts" WHERE "album_arts"."artist" = 'metallica' AND "album_arts"."album" = 'metallica' AND "album_arts"."size" = 'mega' LIMIT 1
+Completed 500 Internal Server Error in 18ms
+
+RuntimeError (API Key is not set):
+  app/controllers/lastfm_controller.rb:10:in `albumart'
+
+
+  Rendered /home/charles/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.1ms)
+  Rendered /home/charles/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+  Rendered /home/charles/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.1ms)
+  Rendered /home/charles/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (17.4ms)
+
+
+Started GET "/albumart?artist=metallica&album=metallica" for 127.0.0.1 at 2014-11-03 22:42:09 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by LastfmController#albumart as HTML
+  Parameters: {"artist"=>"metallica", "album"=>"metallica"}
+  [1m[35mAlbumArt Load (0.1ms)[0m  SELECT "album_arts".* FROM "album_arts" WHERE "album_arts"."artist" = 'metallica' AND "album_arts"."album" = 'metallica' AND "album_arts"."size" = 'mega' LIMIT 1
+Completed 500 Internal Server Error in 13ms
+
+RuntimeError (API Key is not set):
+  app/controllers/lastfm_controller.rb:10:in `albumart'
+
+
+  Rendered /home/charles/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.6ms)
+  Rendered /home/charles/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+  Rendered /home/charles/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+  Rendered /home/charles/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (12.5ms)
+
+
+Started GET "/albumart?artist=metallica&album=metallica" for 127.0.0.1 at 2014-11-03 22:43:31 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by LastfmController#albumart as HTML
+  Parameters: {"artist"=>"metallica", "album"=>"metallica"}
+  [1m[35mAlbumArt Load (0.1ms)[0m  SELECT "album_arts".* FROM "album_arts" WHERE "album_arts"."artist" = 'metallica' AND "album_arts"."album" = 'metallica' AND "album_arts"."size" = 'mega' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (5.8ms)[0m  INSERT INTO "album_arts" ("album", "artist", "created_at", "data", "size", "updated_at", "url") VALUES (?, ?, ?, ?, ?, ?, ?)  [["album", "metallica"], ["artist", "metallica"], ["created_at", Tue, 04 Nov 2014 03:43:33 UTC +00:00], ["data", "<78865 bytes of binary data>"], ["size", "mega"], ["updated_at", Tue, 04 Nov 2014 03:43:33 UTC +00:00], ["url", "http://userserve-ak.last.fm/serve/_/98447141/Metallica.png"]]
+  [1m[36m (19.6ms)[0m  [1mcommit transaction[0m
+  Rendered text template (0.0ms)
+Sent data  (27.9ms)
+Completed 200 OK in 2358ms (Views: 27.7ms | ActiveRecord: 26.1ms)
+  [1m[36mAlbumArt Load (0.4ms)[0m  [1mSELECT "album_arts".* FROM "album_arts" WHERE "album_arts"."artist" = 'metallica' LIMIT 1[0m
+  [1m[36mAlbumArt Load (0.1ms)[0m  [1mSELECT "album_arts".* FROM "album_arts" ORDER BY "album_arts"."id" ASC LIMIT 1[0m
+  [1m[35mAlbumArt Load (0.2ms)[0m  SELECT "album_arts".* FROM "album_arts" ORDER BY "album_arts"."id" ASC LIMIT 1
+  [1m[36mAlbumArt Load (0.2ms)[0m  [1mSELECT "album_arts".* FROM "album_arts" ORDER BY "album_arts"."id" ASC LIMIT 1[0m
+  [1m[36mAlbumArt Load (0.2ms)[0m  [1mSELECT "album_arts".* FROM "album_arts" ORDER BY "album_arts"."id" ASC LIMIT 1[0m
+  [1m[36mAlbumArt Load (0.3ms)[0m  [1mSELECT "album_arts".* FROM "album_arts" ORDER BY "album_arts"."id" ASC LIMIT 1[0m
+  [1m[36mAlbumArt Load (0.2ms)[0m  [1mSELECT "album_arts".* FROM "album_arts" ORDER BY "album_arts"."id" ASC LIMIT 1[0m
+  [1m[36mAlbumArt Load (0.2ms)[0m  [1mSELECT "album_arts".* FROM "album_arts" ORDER BY "album_arts"."id" ASC LIMIT 1[0m
+  [1m[35mAlbumArt Load (0.2ms)[0m  SELECT "album_arts".* FROM "album_arts" ORDER BY "album_arts"."id" ASC LIMIT 1
+  [1m[36mAlbumArt Load (0.2ms)[0m  [1mSELECT "album_arts".* FROM "album_arts" ORDER BY "album_arts"."id" ASC LIMIT 1[0m
+  [1m[36mAlbumArt Load (0.2ms)[0m  [1mSELECT "album_arts".* FROM "album_arts" ORDER BY "album_arts"."id" ASC LIMIT 1[0m
+  [1m[35mAlbumArt Load (0.2ms)[0m  SELECT "album_arts".* FROM "album_arts" ORDER BY "album_arts"."id" ASC LIMIT 1
+
+
+Started GET "/albumart?artist=guided%20by%20voices&album=bee%20thousand" for 127.0.0.1 at 2014-11-03 23:23:19 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by LastfmController#albumart as HTML
+  Parameters: {"artist"=>"guided by voices", "album"=>"bee thousand"}
+  [1m[35mAlbumArt Load (3.6ms)[0m  SELECT "album_arts".* FROM "album_arts" WHERE "album_arts"."artist" = 'guided by voices' AND "album_arts"."album" = 'bee thousand' AND "album_arts"."size" = 'mega' LIMIT 1
+Completed 500 Internal Server Error in 25ms
+
+NoMethodError (undefined method `opacity' for #<ActionController::Parameters:0x00000003f26d88>):
+  app/controllers/lastfm_controller.rb:34:in `albumart'
+
+
+  Rendered /home/charles/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.6ms)
+  Rendered /home/charles/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.4ms)
+  Rendered /home/charles/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+  Rendered /home/charles/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (15.1ms)
+
+
+Started GET "/albumart?artist=guided%20by%20voices&album=bee%20thousand" for 127.0.0.1 at 2014-11-03 23:23:49 -0500
+Processing by LastfmController#albumart as HTML
+  Parameters: {"artist"=>"guided by voices", "album"=>"bee thousand"}
+  [1m[36mAlbumArt Load (0.7ms)[0m  [1mSELECT "album_arts".* FROM "album_arts" WHERE "album_arts"."artist" = 'guided by voices' AND "album_arts"."album" = 'bee thousand' AND "album_arts"."size" = 'mega' LIMIT 1[0m
+Completed 500 Internal Server Error in 13ms
+
+NoMethodError (undefined method `darken' for #<AlbumArt:0x007f44d0a466d8>):
+  app/controllers/lastfm_controller.rb:34:in `albumart'
+
+
+  Rendered /home/charles/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.7ms)
+  Rendered /home/charles/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+  Rendered /home/charles/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+  Rendered /home/charles/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (14.0ms)
+
+
+Started GET "/albumart?artist=guided%20by%20voices&album=bee%20thousand" for 127.0.0.1 at 2014-11-03 23:24:08 -0500
+Processing by LastfmController#albumart as HTML
+  Parameters: {"artist"=>"guided by voices", "album"=>"bee thousand"}
+  [1m[35mAlbumArt Load (0.3ms)[0m  SELECT "album_arts".* FROM "album_arts" WHERE "album_arts"."artist" = 'guided by voices' AND "album_arts"."album" = 'bee thousand' AND "album_arts"."size" = 'mega' LIMIT 1
+  Rendered text template (0.0ms)
+Sent data  (1.2ms)
+Completed 200 OK in 12ms (Views: 1.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/albumart?artist=guided%20by%20voices&album=bee%20thousand&opacity=10" for 127.0.0.1 at 2014-11-03 23:24:16 -0500
+Processing by LastfmController#albumart as HTML
+  Parameters: {"artist"=>"guided by voices", "album"=>"bee thousand", "opacity"=>"10"}
+  [1m[36mAlbumArt Load (0.7ms)[0m  [1mSELECT "album_arts".* FROM "album_arts" WHERE "album_arts"."artist" = 'guided by voices' AND "album_arts"."album" = 'bee thousand' AND "album_arts"."size" = 'mega' LIMIT 1[0m
+  Rendered text template (0.0ms)
+Sent data  (0.6ms)
+Completed 200 OK in 287ms (Views: 0.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/albumart?artist=guided%20by%20voices&album=bee%20thousand&opacity=100" for 127.0.0.1 at 2014-11-03 23:24:20 -0500
+Processing by LastfmController#albumart as HTML
+  Parameters: {"artist"=>"guided by voices", "album"=>"bee thousand", "opacity"=>"100"}
+  [1m[35mAlbumArt Load (0.6ms)[0m  SELECT "album_arts".* FROM "album_arts" WHERE "album_arts"."artist" = 'guided by voices' AND "album_arts"."album" = 'bee thousand' AND "album_arts"."size" = 'mega' LIMIT 1
+  Rendered text template (0.0ms)
+Sent data  (0.7ms)
+Completed 200 OK in 298ms (Views: 0.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/albumart?artist=guided%20by%20voices&album=bee%20thousand&opacity=5" for 127.0.0.1 at 2014-11-03 23:24:29 -0500
+Processing by LastfmController#albumart as HTML
+  Parameters: {"artist"=>"guided by voices", "album"=>"bee thousand", "opacity"=>"5"}
+  [1m[36mAlbumArt Load (0.4ms)[0m  [1mSELECT "album_arts".* FROM "album_arts" WHERE "album_arts"."artist" = 'guided by voices' AND "album_arts"."album" = 'bee thousand' AND "album_arts"."size" = 'mega' LIMIT 1[0m
+  Rendered text template (0.0ms)
+Sent data  (0.4ms)
+Completed 200 OK in 290ms (Views: 0.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/albumart?artist=guided%20by%20voices&album=bee%20thousand&opacity=0" for 127.0.0.1 at 2014-11-03 23:24:32 -0500
+Processing by LastfmController#albumart as HTML
+  Parameters: {"artist"=>"guided by voices", "album"=>"bee thousand", "opacity"=>"0"}
+  [1m[35mAlbumArt Load (0.3ms)[0m  SELECT "album_arts".* FROM "album_arts" WHERE "album_arts"."artist" = 'guided by voices' AND "album_arts"."album" = 'bee thousand' AND "album_arts"."size" = 'mega' LIMIT 1
+  Rendered text template (0.0ms)
+Sent data  (0.4ms)
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/albumart?artist=guided%20by%20voices&album=bee%20thousand&opacity=10" for 127.0.0.1 at 2014-11-03 23:24:36 -0500
+Processing by LastfmController#albumart as HTML
+  Parameters: {"artist"=>"guided by voices", "album"=>"bee thousand", "opacity"=>"10"}
+  [1m[36mAlbumArt Load (0.3ms)[0m  [1mSELECT "album_arts".* FROM "album_arts" WHERE "album_arts"."artist" = 'guided by voices' AND "album_arts"."album" = 'bee thousand' AND "album_arts"."size" = 'mega' LIMIT 1[0m
+  Rendered text template (0.0ms)
+Sent data  (0.5ms)
+Completed 200 OK in 310ms (Views: 0.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/albumart?artist=eagulls&album=eagulls&opacity=10" for 127.0.0.1 at 2014-11-03 23:25:29 -0500
+Processing by LastfmController#albumart as HTML
+  Parameters: {"artist"=>"eagulls", "album"=>"eagulls", "opacity"=>"10"}
+  [1m[35mAlbumArt Load (0.2ms)[0m  SELECT "album_arts".* FROM "album_arts" WHERE "album_arts"."artist" = 'eagulls' AND "album_arts"."album" = 'eagulls' AND "album_arts"."size" = 'mega' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (32.2ms)[0m  INSERT INTO "album_arts" ("album", "artist", "created_at", "data", "size", "updated_at", "url") VALUES (?, ?, ?, ?, ?, ?, ?)  [["album", "eagulls"], ["artist", "eagulls"], ["created_at", Tue, 04 Nov 2014 04:25:39 UTC +00:00], ["data", "<3739435 bytes of binary data>"], ["size", "mega"], ["updated_at", Tue, 04 Nov 2014 04:25:39 UTC +00:00], ["url", "http://userserve-ak.last.fm/serve/_/100509247/Eagulls.png"]]
+  [1m[36m (60.1ms)[0m  [1mcommit transaction[0m
+  Rendered text template (0.0ms)
+Sent data  (0.7ms)
+Completed 200 OK in 13021ms (Views: 0.5ms | ActiveRecord: 92.6ms)
+
+
+Started GET "/albumart?artist=eagulls&album=eagulls&opacity=100" for 127.0.0.1 at 2014-11-03 23:25:47 -0500
+Processing by LastfmController#albumart as HTML
+  Parameters: {"artist"=>"eagulls", "album"=>"eagulls", "opacity"=>"100"}
+  [1m[35mAlbumArt Load (32.5ms)[0m  SELECT "album_arts".* FROM "album_arts" WHERE "album_arts"."artist" = 'eagulls' AND "album_arts"."album" = 'eagulls' AND "album_arts"."size" = 'mega' LIMIT 1
+  Rendered text template (0.0ms)
+Sent data  (0.6ms)
+Completed 200 OK in 3721ms (Views: 0.5ms | ActiveRecord: 32.5ms)
+
+
+Started GET "/albumart?artist=eagulls&album=eagulls&opacity=5" for 127.0.0.1 at 2014-11-03 23:25:56 -0500
+Processing by LastfmController#albumart as HTML
+  Parameters: {"artist"=>"eagulls", "album"=>"eagulls", "opacity"=>"5"}
+  [1m[36mAlbumArt Load (34.9ms)[0m  [1mSELECT "album_arts".* FROM "album_arts" WHERE "album_arts"."artist" = 'eagulls' AND "album_arts"."album" = 'eagulls' AND "album_arts"."size" = 'mega' LIMIT 1[0m
+  Rendered text template (0.0ms)
+Sent data  (0.6ms)
+Completed 200 OK in 3258ms (Views: 0.4ms | ActiveRecord: 34.9ms)
+
+
+Started GET "/albumart?artist=eagulls&album=eagulls&opacity=5" for 127.0.0.1 at 2014-11-03 23:33:40 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by LastfmController#albumart as HTML
+  Parameters: {"artist"=>"eagulls", "album"=>"eagulls", "opacity"=>"5"}
+  [1m[35mAlbumArt Load (8.5ms)[0m  SELECT "album_arts".* FROM "album_arts" WHERE "album_arts"."artist" = 'eagulls' AND "album_arts"."album" = 'eagulls' AND "album_arts"."size" = 'mega' LIMIT 1
+  Rendered text template (0.0ms)
+Sent data  (4.2ms)
+Completed 200 OK in 3403ms (Views: 4.0ms | ActiveRecord: 8.9ms)
+
+
+Started GET "/albumart?artist=eagulls&album=eagulls&opacity=5" for 127.0.0.1 at 2014-11-03 23:34:51 -0500
+Processing by LastfmController#albumart as HTML
+  Parameters: {"artist"=>"eagulls", "album"=>"eagulls", "opacity"=>"5"}
+Completed 500 Internal Server Error in 2ms
+
+NameError (uninitialized constant AlbumArt::ImageProcess):
+  app/models/album_art.rb:2:in `<class:AlbumArt>'
+  app/models/album_art.rb:1:in `<top (required)>'
+  app/controllers/lastfm_controller.rb:7:in `albumart'
+
+
+  Rendered /home/charles/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.3ms)
+  Rendered /home/charles/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+  Rendered /home/charles/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+  Rendered /home/charles/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (16.0ms)
+
+
+Started GET "/albumart?artist=eagulls&album=eagulls&opacity=5" for 127.0.0.1 at 2014-11-03 23:36:29 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by LastfmController#albumart as HTML
+  Parameters: {"artist"=>"eagulls", "album"=>"eagulls", "opacity"=>"5"}
+  [1m[35mAlbumArt Load (9.0ms)[0m  SELECT "album_arts".* FROM "album_arts" WHERE "album_arts"."artist" = 'eagulls' AND "album_arts"."album" = 'eagulls' AND "album_arts"."size" = 'mega' LIMIT 1
+Completed 500 Internal Server Error in 31ms
+
+NameError (uninitialized constant AlbumArt::ImageProcess):
+  app/models/album_art.rb:3:in `darkened'
+  app/controllers/lastfm_controller.rb:34:in `albumart'
+
+
+  Rendered /home/charles/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.8ms)
+  Rendered /home/charles/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (28.5ms)
+  Rendered /home/charles/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.3ms)
+  Rendered /home/charles/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (42.5ms)
+
+
+Started GET "/albumart?artist=eagulls&album=eagulls&opacity=5" for 127.0.0.1 at 2014-11-03 23:38:44 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by LastfmController#albumart as HTML
+  Parameters: {"artist"=>"eagulls", "album"=>"eagulls", "opacity"=>"5"}
+Completed 500 Internal Server Error in 10ms
+
+LoadError (No such file to load -- image_process):
+  app/models/album_art.rb:1:in `<top (required)>'
+  app/controllers/lastfm_controller.rb:7:in `albumart'
+
+
+  Rendered /home/charles/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.6ms)
+  Rendered /home/charles/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+  Rendered /home/charles/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.3ms)
+  Rendered /home/charles/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (13.2ms)
+
+
+Started GET "/albumart?artist=eagulls&album=eagulls&opacity=5" for 127.0.0.1 at 2014-11-03 23:39:05 -0500
+Processing by LastfmController#albumart as HTML
+  Parameters: {"artist"=>"eagulls", "album"=>"eagulls", "opacity"=>"5"}
+Completed 500 Internal Server Error in 3ms
+
+LoadError (No such file to load -- lib/image_process):
+  app/models/album_art.rb:1:in `<top (required)>'
+  app/controllers/lastfm_controller.rb:7:in `albumart'
+
+
+  Rendered /home/charles/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.1ms)
+  Rendered /home/charles/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+  Rendered /home/charles/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+  Rendered /home/charles/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (14.4ms)
+
+
+Started GET "/albumart?artist=eagulls&album=eagulls&opacity=5" for 127.0.0.1 at 2014-11-03 23:39:11 -0500
+Processing by LastfmController#albumart as HTML
+  Parameters: {"artist"=>"eagulls", "album"=>"eagulls", "opacity"=>"5"}
+Completed 500 Internal Server Error in 2ms
+
+LoadError (No such file to load -- lib/image_process):
+  app/models/album_art.rb:1:in `<top (required)>'
+  app/controllers/lastfm_controller.rb:7:in `albumart'
+
+
+  Rendered /home/charles/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.7ms)
+  Rendered /home/charles/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.8ms)
+  Rendered /home/charles/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.1ms)
+  Rendered /home/charles/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (44.3ms)
+
+
+Started GET "/albumart?artist=eagulls&album=eagulls&opacity=5" for 127.0.0.1 at 2014-11-03 23:39:18 -0500
+Processing by LastfmController#albumart as HTML
+  Parameters: {"artist"=>"eagulls", "album"=>"eagulls", "opacity"=>"5"}
+  [1m[35mAlbumArt Load (9.0ms)[0m  SELECT "album_arts".* FROM "album_arts" WHERE "album_arts"."artist" = 'eagulls' AND "album_arts"."album" = 'eagulls' AND "album_arts"."size" = 'mega' LIMIT 1
+Completed 500 Internal Server Error in 23ms
+
+NoMethodError (undefined method `darken' for ImageProcess:Module):
+  app/models/album_art.rb:4:in `darkened'
+  app/controllers/lastfm_controller.rb:34:in `albumart'
+
+
+  Rendered /home/charles/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.6ms)
+  Rendered /home/charles/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+  Rendered /home/charles/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.1ms)
+  Rendered /home/charles/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (12.9ms)
+
+
+Started GET "/albumart?artist=eagulls&album=eagulls&opacity=5" for 127.0.0.1 at 2014-11-03 23:39:53 -0500
+Processing by LastfmController#albumart as HTML
+  Parameters: {"artist"=>"eagulls", "album"=>"eagulls", "opacity"=>"5"}
+  [1m[36mAlbumArt Load (35.9ms)[0m  [1mSELECT "album_arts".* FROM "album_arts" WHERE "album_arts"."artist" = 'eagulls' AND "album_arts"."album" = 'eagulls' AND "album_arts"."size" = 'mega' LIMIT 1[0m
+Completed 500 Internal Server Error in 38ms
+
+NoMethodError (undefined method `darken' for ImageProcess:Module):
+  app/models/album_art.rb:4:in `darkened'
+  app/controllers/lastfm_controller.rb:34:in `albumart'
+
+
+  Rendered /home/charles/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.6ms)
+  Rendered /home/charles/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.7ms)
+  Rendered /home/charles/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.1ms)
+  Rendered /home/charles/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (14.0ms)
+
+
+Started GET "/albumart?artist=eagulls&album=eagulls&opacity=5" for 127.0.0.1 at 2014-11-03 23:39:55 -0500
+Processing by LastfmController#albumart as HTML
+  Parameters: {"artist"=>"eagulls", "album"=>"eagulls", "opacity"=>"5"}
+  [1m[35mAlbumArt Load (31.2ms)[0m  SELECT "album_arts".* FROM "album_arts" WHERE "album_arts"."artist" = 'eagulls' AND "album_arts"."album" = 'eagulls' AND "album_arts"."size" = 'mega' LIMIT 1
+Completed 500 Internal Server Error in 33ms
+
+NoMethodError (undefined method `darken' for ImageProcess:Module):
+  app/models/album_art.rb:4:in `darkened'
+  app/controllers/lastfm_controller.rb:34:in `albumart'
+
+
+  Rendered /home/charles/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.6ms)
+  Rendered /home/charles/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+  Rendered /home/charles/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.1ms)
+  Rendered /home/charles/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (12.1ms)
+
+
+Started GET "/albumart?artist=eagulls&album=eagulls&opacity=5" for 127.0.0.1 at 2014-11-03 23:46:16 -0500
+Processing by LastfmController#albumart as HTML
+  Parameters: {"artist"=>"eagulls", "album"=>"eagulls", "opacity"=>"5"}
+  [1m[36mAlbumArt Load (33.0ms)[0m  [1mSELECT "album_arts".* FROM "album_arts" WHERE "album_arts"."artist" = 'eagulls' AND "album_arts"."album" = 'eagulls' AND "album_arts"."size" = 'mega' LIMIT 1[0m
+Completed 500 Internal Server Error in 35ms
+
+NoMethodError (undefined method `darken' for ImageProcess:Module):
+  app/models/album_art.rb:4:in `darkened'
+  app/controllers/lastfm_controller.rb:34:in `albumart'
+
+
+  Rendered /home/charles/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.6ms)
+  Rendered /home/charles/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.9ms)
+  Rendered /home/charles/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.1ms)
+  Rendered /home/charles/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (14.1ms)
+
+
+Started GET "/albumart?artist=eagulls&album=eagulls&opacity=5" for 127.0.0.1 at 2014-11-03 23:47:00 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by LastfmController#albumart as HTML
+  Parameters: {"artist"=>"eagulls", "album"=>"eagulls", "opacity"=>"5"}
+  [1m[35mAlbumArt Load (7.8ms)[0m  SELECT "album_arts".* FROM "album_arts" WHERE "album_arts"."artist" = 'eagulls' AND "album_arts"."album" = 'eagulls' AND "album_arts"."size" = 'mega' LIMIT 1
+  Rendered text template (0.0ms)
+Sent data  (4.3ms)
+Completed 200 OK in 3204ms (Views: 4.1ms | ActiveRecord: 8.3ms)
+
+
+Started GET "/albumart?artist=eagulls&album=eagulls&opacity=100" for 127.0.0.1 at 2014-11-03 23:47:08 -0500
+Processing by LastfmController#albumart as HTML
+  Parameters: {"artist"=>"eagulls", "album"=>"eagulls", "opacity"=>"100"}
+  [1m[36mAlbumArt Load (32.8ms)[0m  [1mSELECT "album_arts".* FROM "album_arts" WHERE "album_arts"."artist" = 'eagulls' AND "album_arts"."album" = 'eagulls' AND "album_arts"."size" = 'mega' LIMIT 1[0m
+  Rendered text template (0.0ms)
+Sent data  (0.6ms)
+Completed 200 OK in 3641ms (Views: 0.5ms | ActiveRecord: 32.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-11-03 23:50:20 -0500
+Processing by MainController#rand as HTML
+  Parameters: {"anything"=>""}
+  Rendered text template (0.0ms)
+Sent data  (1.2ms)
+Completed 200 OK in 1489ms (Views: 1.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/?opacity=100" for 127.0.0.1 at 2014-11-03 23:50:28 -0500
+Processing by MainController#rand as HTML
+  Parameters: {"opacity"=>"100", "anything"=>""}
+  Rendered text template (0.0ms)
+Sent data  (0.7ms)
+Completed 200 OK in 2039ms (Views: 0.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/?opacity=100" for 127.0.0.1 at 2014-11-03 23:50:57 -0500
+Processing by MainController#rand as HTML
+  Parameters: {"opacity"=>"100", "anything"=>""}
+  Rendered text template (0.0ms)
+Sent data  (0.6ms)
+Completed 200 OK in 4645ms (Views: 0.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/?opacity=100" for 127.0.0.1 at 2014-11-03 23:51:56 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by MainController#rand as HTML
+  Parameters: {"opacity"=>"100", "anything"=>""}
+Completed 500 Internal Server Error in 1535ms
+
+NoMethodError (undefined method `colums' for  JPEG 1024x684 1024x684+0+0 DirectClass 8-bit 493kb:Magick::Image):
+  lib/assets/image_process.rb:8:in `darken'
+  app/controllers/main_controller.rb:12:in `rand'
+
+
+  Rendered /home/charles/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.6ms)
+  Rendered /home/charles/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+  Rendered /home/charles/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+  Rendered /home/charles/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (13.7ms)
+
+
+Started GET "/?opacity=100" for 127.0.0.1 at 2014-11-03 23:52:08 -0500
+Processing by MainController#rand as HTML
+  Parameters: {"opacity"=>"100", "anything"=>""}
+Completed 500 Internal Server Error in 1911ms
+
+NoMethodError (undefined method `colums' for  JPEG 1024x683 1024x683+0+0 DirectClass 8-bit 462kb:Magick::Image):
+  lib/assets/image_process.rb:8:in `darken'
+  app/controllers/main_controller.rb:12:in `rand'
+
+
+  Rendered /home/charles/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.8ms)
+  Rendered /home/charles/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+  Rendered /home/charles/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.8ms)
+  Rendered /home/charles/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (13.3ms)
+
+
+Started GET "/?opacity=100" for 127.0.0.1 at 2014-11-03 23:52:30 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by MainController#rand as HTML
+  Parameters: {"opacity"=>"100", "anything"=>""}
+  Rendered text template (0.0ms)
+Sent data  (4.2ms)
+Completed 200 OK in 2526ms (Views: 4.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/?opacity=100" for 127.0.0.1 at 2014-11-03 23:52:39 -0500
+Processing by MainController#rand as HTML
+  Parameters: {"opacity"=>"100", "anything"=>""}
+  Rendered text template (0.0ms)
+Sent data  (0.7ms)
+Completed 200 OK in 2467ms (Views: 0.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-11-03 23:52:49 -0500
+Processing by MainController#rand as HTML
+  Parameters: {"anything"=>""}
+  Rendered text template (0.0ms)
+Sent data  (0.7ms)
+Completed 200 OK in 1520ms (Views: 0.5ms | ActiveRecord: 0.0ms)

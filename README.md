@@ -20,3 +20,10 @@ and an optional `size` parameter which is one of
 
 By default it will return the largest available. It caches art too, so after the first request it should be really fast. Please don't
 abuse this, it is on a free Heroku instance. :)
+
+Opacity
+=======
+
+Both endpoints now have an optional `opacity` parameter, an integer from 0 to 100. This adds darkens the image by that factor (0 for none, 100 for a lot).
+The actual amount applied is scaled by the brightness of the image, so all images should expect about the same average brightness for a given `opacity`.
+Uses RMagick. It's pretty snappy, too. If these images are being used as wallpapers behind white text, this should improve readiblity.
