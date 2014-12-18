@@ -40,7 +40,7 @@ gem 'nokogiri'
 
 gem 'lastfm-client'
 
-gem 'rmagick', :require => 'RMagick' #, :group => :development #already included on heroku
+gem 'rmagick', '~> 2.13.4', :require => 'RMagick' #, :group => :development #already included on heroku
 
 #allow redirects
 gem 'open_uri_redirections'
