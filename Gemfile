@@ -47,6 +47,8 @@ gem 'rmagick', '~> 2.13.4', :require => 'RMagick' #, :group => :development #alr
 #allow redirects
 gem 'open_uri_redirections'
 
+gem 'rails_12factor', group: :production
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 
