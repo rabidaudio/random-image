@@ -10,13 +10,13 @@ class LastfmController < ApplicationController
 
         result = LastFM::Album.get_info(artist: params[:artist], album: params[:album])
         if not result['error'].nil?
-            render :nothing => true, :status => 404
+            render json: result, :status => 404
             return
         end
 
         img_url = result['album']['image'].select { |i| i['size']==params[:size] }.first['#text']
         if img_url.nil? then
-            render :nothing => true, :status => 404
+            render json: result['album']['image'], :status => 404
             return
         end
         #download image
